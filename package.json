@@ -1,0 +1,41 @@
+{
+  "name": "@zipteams/email-client",
+  "version": "0.0.1",
+  "description": "NodeJS SDK to send emails via Zipteams' email notification providers",
+  "main": "./lib-cjs/index.js",
+  "types": "./lib-cjs/index.d.ts",
+  "module": "./lib-es/index.js",
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:es",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zipteams/lib-email.git"
+  },
+  "keywords": [
+    "zipteams",
+    "email",
+    "client",
+    "nodejs"
+  ],
+  "author": "Zipteams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zipteams/lib-email/issues"
+  },
+  "homepage": "https://github.com/zipteams/lib-email#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.17.0",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.110.0"
+  }
+}
