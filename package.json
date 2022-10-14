@@ -1,6 +1,6 @@
 {
   "name": "@zipteams/email-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NodeJS SDK to send emails via Zipteams' email notification providers",
   "main": "./lib-cjs/index.js",
   "types": "./lib-cjs/index.d.ts",
