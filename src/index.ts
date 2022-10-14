@@ -5,6 +5,7 @@ export class EmailClient {
 	private _provider : EmailProvider;
 	private _from : string | undefined = undefined;
 	private _to : string[] | undefined = undefined;
+	private _replyTo: string | undefined = undefined;
 	private _cc : string[] | undefined = undefined;
 	private _subject : string | undefined = undefined;
 	private _body : string | undefined = undefined;
@@ -30,6 +31,12 @@ export class EmailClient {
 			if (!this._isValidEmail(address)) throw new Error(`To email address is not valid : ${address}`);
 		}
 		this._to = to;
+		return this;
+	}
+
+	setReplyTo(replyTo: string): EmailClient {
+		if (!this._isValidEmail(replyTo)) throw new Error(`Reply-to email address is not valid : ${replyTo}`);
+		this._replyTo = replyTo;
 		return this;
 	}
 	
@@ -65,6 +72,7 @@ export class EmailClient {
 		};
 		if (this._to) config.to = <string[]>this._to;
 		if (this._cc) config.cc = <string[]>this._cc;
+		if (this._replyTo) config.replyTo = <string>this._replyTo;
 
 		return this._provider.send(config);
 	}
