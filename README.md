@@ -7,6 +7,7 @@ A library to send emails via Zipteams' email notification queue
 `EmailClient` - Provides a client to send the email.
   - `setSender` - set the 'from' email address
   - `setToRecipients` - (optionally) set the 'to' email address(es)
+  - `setReplyTo` - (optionally) set the 'reply-to' email address
   - `setCCRecipients` - (optionally) set the 'cc' email address(es)
   - `setSubject` - set the subject of the email
   - `setBody` - set the body of the email
@@ -32,6 +33,7 @@ async function main() {
 	const result = await client
 		.setSender('info@zipteams.com')
 		.setToRecipients(['customer@zipteams.com'])
+		.setReplyTo('reply@zipteams.com')
 		.setSubject('test mail')
 		.setBody('this is a test mail')
 		.send();
